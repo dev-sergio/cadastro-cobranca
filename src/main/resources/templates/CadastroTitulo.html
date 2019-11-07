@@ -1,25 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{LayoutPadrao}">
+
 <head>
-<meta charset="UTF-8" />
-<title>Cadastro de Titulo</title>
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/style.css" />
-
+	<title>Cadastro de Titulo</title>
 </head>
-<body>
 
-	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/titulos/novo"> <img alt="Sergio Junior"
-					src="/images/logo.png" />
-				</a>
-			</div>
-		</div>
-	</nav>
+<section layout:fragment="conteudo">
 
 	<form class="form-horizontal" method="POST" action="/titulos">
 
@@ -43,8 +32,11 @@
 		<div class="card">
 
 			<div class="card-header">
-				<h2 class="card-title">NOVO TÍTULO</h2>
+			<div class="clearfix">
+				<h1 class="card-title sj-titulo-card">Novo Título</h1>
+				<a class="btn btn-link sj-link-card" href="/titulos">Pesquisar Títulos</a>
 			</div>
+		</div>
 
 
 			<div class="card-body" align="right">
@@ -95,9 +87,6 @@
 		</div>
 
 	</form>
+</section>
 
-	<script src="/js/jquery-3.4.1.min.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
-
-</body>
 </html>

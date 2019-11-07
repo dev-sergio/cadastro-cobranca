@@ -1,35 +1,23 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{LayoutPadrao}">
 
 <head>
-<meta charset="UTF-8" />
 <title>Pesquisa de Títulos</title>
-
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/style.css" />
 
 </head>
 
-
-<body>
-
-	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/titulos/novo"> <img
-					alt="Sergio Junior" src="/images/logo.png" />
-				</a>
-			</div>
-		</div>
-	</nav>
+<section layout:fragment="conteudo">
 
 	<div class="card">
 
-
 		<div class="card-header">
-			<h2 class="card-title">Pesquisa de Títulos</h2>
+			<div class="clearfix">
+				<h1 class="card-title sj-titulo-card">Pesquisa de Títulos</h1>
+				<a class="btn btn-link sj-link-card" href="/titulos/novo">Novo Título</a>
+			</div>
 		</div>
 
 		<div class="card-body">
@@ -64,9 +52,6 @@
 		</div>
 
 	</div>
+</section>
 
-	<script src="/js/jquery-3.4.1.min.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
-
-</body>
 </html>

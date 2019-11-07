@@ -16,3 +16,13 @@
 	margin-right: 10px;
 	margin-top: 10px;
 }
+
+.sj-titulo-card{
+	float: left;
+	padding-top: 2px;
+}
+
+.sj-link-card{
+	float: right;
+	padding: 1%;
+}
