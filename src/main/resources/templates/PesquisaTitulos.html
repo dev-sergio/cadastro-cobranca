@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<title>Pesquisa de Títulos</title>
+
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+</head>
+
+
+<body>
+
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/titulos/novo"> <img
+					alt="Sergio Junior" src="/images/logo.png" />
+				</a>
+			</div>
+		</div>
+	</nav>
+
+	<div class="card">
+
+
+		<div class="card-header">
+			<h2 class="card-title">Pesquisa de Títulos</h2>
+		</div>
+
+		<div class="card-body">
+			<table class="table table-bordered table-striped">
+				<thead>
+
+					<!-- <tr class="d-flex">
+						<th>#</th>
+						<th class="text-center col-md-5">Decrição</th>
+						<th class="text-center col-md-2">Data de vencimento</th>
+						<th class="text-right col-md-2">Valor</th>
+						<th class="text-center col-md-2">Status</th>
+						<th class="col-md-1"></th>
+					</tr> -->
+
+
+					<tr>
+						<th class="text-center" width="2%">#</th>
+						<th class="text-center" width="30%">Decrição</th>
+						<th class="text-center" width="15%">Data de vencimento</th>
+						<th class="text-right" width="10%">Valor</th>
+						<th class="text-center" width="15%">Status</th>
+						<th width="7%"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td colspan="6">Nenhum título foi encontrado</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+
+	<script src="/js/jquery-3.4.1.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+
+</body>
+</html>
