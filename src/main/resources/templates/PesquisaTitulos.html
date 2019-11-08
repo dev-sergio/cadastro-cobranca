@@ -16,7 +16,8 @@
 		<div class="card-header">
 			<div class="clearfix">
 				<h1 class="card-title sj-titulo-card">Pesquisa de Títulos</h1>
-				<a class="btn btn-link sj-link-card" href="/titulos/novo">Novo Título</a>
+				<a class="btn btn-link sj-link-card" href="/titulos/novo">Novo
+					Título</a>
 			</div>
 		</div>
 
@@ -37,15 +38,23 @@
 					<tr>
 						<th class="text-center" width="2%">#</th>
 						<th class="text-center" width="30%">Decrição</th>
-						<th class="text-center" width="15%">Data de vencimento</th>
+						<th class="text-center" width="10%">Data de vencimento</th>
 						<th class="text-right" width="10%">Valor</th>
-						<th class="text-center" width="15%">Status</th>
-						<th width="7%"></th>
+						<th class="text-center" width="11%">Status</th>
+						<th width="9%"></th>
 					</tr>
 				</thead>
 				<tbody>
+					<tr th:each="titulo : ${titulos}">
+						<td class="text-center" th:text="${titulo.codigo}"></td>
+						<td class="text-left" th:text="${titulo.descricao}"></td>
+						<td class="text-center" th:text="${{titulo.dataVencimento}}"></td>
+						<td class="text-right" th:text="|${{titulo.valor}} R$|"></td>
+						<td class="text-center" th:text="${titulo.status}"></td>
+						<td class="text-center"></td>
+					</tr>
 					<tr>
-						<td colspan="6">Nenhum título foi encontrado</td>
+						<td colspan="6" th:if="${#lists.isEmpty(titulos)}">Nenhum título foi encontrado</td>
 					</tr>
 				</tbody>
 			</table>
