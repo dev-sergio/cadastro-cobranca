@@ -26,3 +26,8 @@
 	float: right;
 	padding: 1%;
 }
+
+.is-invalid {
+  border: 2px solid red;
+  
+}
