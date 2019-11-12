@@ -8,9 +8,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.sergio.cobranca.model.StatusTitulo;
 import br.com.sergio.cobranca.model.Titulo;
@@ -19,31 +21,31 @@ import br.com.sergio.cobranca.repository.Titulos;
 @Controller
 @RequestMapping("/titulos")
 public class TituloController {
+	
+	private final String CADASTRO_VIEW = "CadastroTitulo";
 
 	@Autowired
 	private Titulos titulos;
 
 	@RequestMapping("/novo")
 	public ModelAndView novo() {
-		ModelAndView mv = new ModelAndView("CadastroTitulo");
+		ModelAndView mv = new ModelAndView(CADASTRO_VIEW);
 		mv.addObject(new Titulo());
 		return mv;
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public ModelAndView salvar(@Validated Titulo titulo, Errors errors) {
+	public String salvar(@Validated Titulo titulo, Errors errors, RedirectAttributes attribures) {
 		
-		ModelAndView mv = new ModelAndView("CadastroTitulo");
-
 		if(errors.hasErrors()) {
-			mv.addObject("errors", errors);
-			return mv;			
+			//attribures.addFlashAttribute("errors", errors);
+			return CADASTRO_VIEW;
+			
 		}else {
 			titulos.save(titulo);
-			mv.addObject("mensagem", "Título salvo com sucesso!!");
-			return mv;
+			attribures.addFlashAttribute("mensagem", "Título salvo com sucesso!!");
+			return "redirect:/titulos/novo";
 		}
-		
 	}
 
 	@RequestMapping
@@ -55,6 +57,14 @@ public class TituloController {
 		mv.addObject("titulos", todosTitulos);
 
 		return mv;
+	}
+	
+	@RequestMapping("{codigo}")
+	public ModelAndView edicao(@PathVariable("codigo") Titulo titulo, Long codigo) {
+		ModelAndView mv = new ModelAndView(CADASTRO_VIEW);
+		mv.addObject(titulo);
+		return mv;
+		
 	}
 
 	@ModelAttribute("todosStatusTitulo")
