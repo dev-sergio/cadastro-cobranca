@@ -13,8 +13,8 @@
 	<form class="form-horizontal" method="POST" action="/titulos"
 		th:object="${titulo}">
 
-
-		<div th:include="Mensagem"></div>
+<div th:include="MensagemGeral"></div>
+<div th:include="MensagemErro"></div>
 
 		<div class="card">
 

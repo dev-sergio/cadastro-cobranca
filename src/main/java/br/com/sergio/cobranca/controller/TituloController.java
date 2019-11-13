@@ -38,7 +38,6 @@ public class TituloController {
 	public String salvar(@Validated Titulo titulo, Errors errors, RedirectAttributes attribures) {
 		
 		if(errors.hasErrors()) {
-			//attribures.addFlashAttribute("errors", errors);
 			return CADASTRO_VIEW;
 			
 		}else {
@@ -66,6 +65,15 @@ public class TituloController {
 		return mv;
 		
 	}
+	
+	@RequestMapping(value="{codigo}", method = RequestMethod.DELETE)
+	public String excluir(@PathVariable Long codigo, RedirectAttributes attributes) {
+		titulos.deleteById(codigo);
+		
+		attributes.addFlashAttribute("mensagem", "Título excluído com sucesso!");
+		return "redirect:/titulos";
+	}
+	
 
 	@ModelAttribute("todosStatusTitulo")
 	public List<StatusTitulo> todosStatusTitulo() {

@@ -28,6 +28,13 @@
 }
 
 .is-invalid {
-  border: 2px solid red;
-  
+  border: 2px solid red; 
 }
+
+.btnConfirma{
+	margin-left: 10px
+}
+
+
+
+
