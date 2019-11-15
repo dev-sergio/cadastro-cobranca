@@ -20,3 +20,7 @@ $('#confirmacaoExclusaoModal').on(
 							+ descricaoTitulo + '</strong>?');
 
 		});
+
+$(function() {
+	$('.js-currency').maskMoney({decimal:',', thousands:'.'});
+});

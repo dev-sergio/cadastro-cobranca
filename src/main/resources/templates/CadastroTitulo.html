@@ -50,7 +50,7 @@
 				<div class="form-group row">
 					<label for="valor" class="col-sm-2 control-label">Valor</label>
 					<div class="col-sm-2">
-						<input type="text" class="form-control" id="valor" th:field="*{valor}" th:classappend="${#fields.hasErrors('valor')}? 'is-invalid'" />
+						<input type="text" class="form-control js-currency" id="js-currency" th:field="*{valor}" th:classappend="${#fields.hasErrors('valor')}? 'is-invalid'" />
 						<div class="invalid-feedback" align="left">Por favor, insira um valor valido.</div>
 					</div>
 				</div>
