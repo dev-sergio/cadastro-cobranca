@@ -1,9 +1,12 @@
 package br.com.sergio.cobranca.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
+import br.com.sergio.cobranca.model.StatusTitulo;
 import br.com.sergio.cobranca.model.Titulo;
 import br.com.sergio.cobranca.repository.Titulos;
 
@@ -25,6 +28,14 @@ public class CadastroTituloService {
 	public void delete(Long codigo) {
 		titulos.deleteById(codigo);
 	}
-	
-	
+
+	public StatusTitulo receber(Long codigo) {
+		Optional<Titulo> titulo = titulos.findById(codigo);
+		
+		titulo.get().setStatus(StatusTitulo.RECEBIDO);
+		titulos.save(titulo.get());
+		
+		return titulo.get().getStatus();
+		
+	}	
 }
