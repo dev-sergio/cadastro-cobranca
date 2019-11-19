@@ -31,7 +31,7 @@
 				<input type="hidden" th:field="*{codigo}"/>
 				
 				<div class="form-group row">
-					<label for="descricao" class="col-sm-2 control-label">Descrição</label>
+					<label for="descricao" class="col-sm-2 control-label text-right">Descrição</label>
 					<div class="col-sm-4">
 						<input type="text" class="form-control" id="descricao" th:field="*{descricao}" th:classappend="${#fields.hasErrors('descricao')}? 'is-invalid'" />
 						<div class="invalid-feedback" align="left">Por favor, insira uma descrição valida.</div>

@@ -45,7 +45,7 @@ $(function() {
 		response.fail(function(e){
 			console.log(e);
 			alert('Erro recebendo cobrança');
-		});
+		});	
 		
 	});
 	

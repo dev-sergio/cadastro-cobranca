@@ -1,5 +1,6 @@
 package br.com.sergio.cobranca.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 import br.com.sergio.cobranca.model.StatusTitulo;
 import br.com.sergio.cobranca.model.Titulo;
 import br.com.sergio.cobranca.repository.Titulos;
+import br.com.sergio.cobranca.repository.filter.TituloFilter;
 
 @Service
 public class CadastroTituloService {
@@ -37,5 +39,12 @@ public class CadastroTituloService {
 		
 		return titulo.get().getStatus();
 		
-	}	
+	}
+	
+	public List<Titulo> filtrar(TituloFilter filtro){
+		String descricao = filtro.getDescricao() == null ? "" : filtro.getDescricao();
+		return titulos.findByDescricaoContaining(descricao);
+	}
+	
+	
 }

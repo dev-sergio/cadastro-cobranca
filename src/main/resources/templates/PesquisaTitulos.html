@@ -24,11 +24,27 @@
 		</div>
 
 		<div class="card-body">
+			<form method="get" class="form-horizontal" action="/titulos" th:object="${filtro}">
+				<div class="form-group">
+					<div class="col-sm-3 qdInput">
+						<div class="input-group">
+							<input class="form form-control"
+								placeholder="Digite o título a ser pesquisado"
+								autofocus="autofocus" th:field="*{descricao}"></input> <span class="input-group-btn">
+								<button type="submit" class="btn btn-default">
+									<i class="fas fa-search"></i>
+								</button>
+							</span>
+						</div>
+					</div>
+				</div>
+			</form>
+
 			<table class="table table-bordered table-striped">
 				<thead>
 
 					<tr>
-						<th class="text-center" width="2%">#</th>
+						<th class="text-center text-justify" width="2%">#</th>
 						<th class="text-center" width="30%">Decrição</th>
 						<th class="text-center" width="9%">Data de vencimento</th>
 						<th class="text-right" width="8%">Valor</th>
