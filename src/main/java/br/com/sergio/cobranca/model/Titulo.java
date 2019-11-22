@@ -1,6 +1,8 @@
 package br.com.sergio.cobranca.model;
 
 import java.math.BigDecimal;
+import java.text.ParseException;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -8,12 +10,15 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
 
 @Entity
@@ -27,10 +32,10 @@ public class Titulo {
 	@Size(max = 60, message = "A descrição não pode conter mais de 60 caracteres")
 	private String descricao;
 
-	//@DateTimeFormat(pattern = "dd/MM/yyyy")
-	//@Temporal(TemporalType.DATE)
-	@NotEmpty(message= "Data de vencimento é obrigatório")
-	private String dataVencimento;
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@Temporal(TemporalType.DATE)
+	@NotNull(message= "Data de vencimento é obrigatório")
+	private Date dataVencimento;
 
 	@DecimalMin(value="0.01", message = "Valor não pode ser menor que 0,01")
 	@DecimalMax(value="10000000.00", message="Valor não pode ser maior que 10 Bilhões")
@@ -57,11 +62,11 @@ public class Titulo {
 		this.descricao = descricao;
 	}
 
-	public String getDataVencimento() {
+	public Date getDataVencimento() throws ParseException {
 		return dataVencimento;
 	}
 
-	public void setDataVencimento(String dataVencimento) {
+	public void setDataVencimento(Date dataVencimento) {
 		this.dataVencimento= dataVencimento;
 	
 	}

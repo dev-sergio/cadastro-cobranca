@@ -14,7 +14,7 @@ $('#confirmacaoExclusaoModal').on(
 				action += '/';
 			}
 			form.attr('action', action + codigoTitulo);
-
+			console.log(action + codigoTitulo);	
 			modal.find('.modal-body span').html(
 					'Voce deseja realmente excluir o titulo com a descrição: <br> <strong>'
 							+ descricaoTitulo + '</strong>?');

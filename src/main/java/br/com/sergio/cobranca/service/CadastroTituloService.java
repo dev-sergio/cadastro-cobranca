@@ -31,13 +31,13 @@ public class CadastroTituloService {
 		titulos.deleteById(codigo);
 	}
 
-	public StatusTitulo receber(Long codigo) {
+	public String receber(Long codigo) {
 		Optional<Titulo> titulo = titulos.findById(codigo);
 		
 		titulo.get().setStatus(StatusTitulo.RECEBIDO);
 		titulos.save(titulo.get());
 		
-		return titulo.get().getStatus();
+		return StatusTitulo.RECEBIDO.getDescricao();
 		
 	}
 	

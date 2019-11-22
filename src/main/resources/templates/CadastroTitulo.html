@@ -10,7 +10,7 @@
 
 <section layout:fragment="conteudo">
 
-	<form class="form-horizontal" method="POST" action="/titulos"
+	<form class="form-horizontal" method="POST" th:action="@{/titulos}"
 		th:object="${titulo}">
 
 <div th:include="MensagemGeral"></div>
@@ -21,7 +21,7 @@
 			<div class="card-header">
 				<div class="clearfix">
 					<h1 class="card-title sj-titulo-card">Novo Título</h1>
-					<a class="btn btn-link sj-link-card" href="/titulos">Pesquisar Títulos</a>
+					<a class="btn btn-link sj-link-card" th:href="@{/titulos}">Pesquisar Títulos</a>
 				</div>
 			</div>
 

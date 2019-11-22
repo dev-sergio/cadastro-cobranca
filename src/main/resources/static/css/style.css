@@ -1,44 +1,43 @@
+/* TELA GRANDE */
+@media ( min-width : 768px) {
+	.card {
+		margin-left: 10px;
+		margin-right: 10px;
+		margin-top: 10px;
+	}
+	.alert {
+		margin-left: 10px;
+		margin-right: 10px;
+		margin-top: 10px;
+	}
+}
+
 .navbar-brand {
 	padding-top: 8px;
 }
-.card-title{
+
+.card-title {
 	padding-top: 10px;
 }
 
-.card{
-	margin-left: 10px;
-	margin-right: 10px;
-	margin-top: 10px;
-}
-
-.alert{
-	margin-left: 10px;
-	margin-right: 10px;
-	margin-top: 10px;
-}
-
-.sj-titulo-card{
+.sj-titulo-card {
 	float: left;
 	padding-top: 2px;
 }
 
-.sj-link-card{
+.sj-link-card {
 	float: right;
 	padding: 1%;
 }
 
 .is-invalid {
-  border: 2px solid red; 
+	border: 2px solid red;
 }
 
-.btnConfirma{
+.btnConfirma {
 	margin-left: 10px
 }
 
-.qdInput{
+.qdInput {
 	padding-left: 0px;
 }
-
-
-
-
